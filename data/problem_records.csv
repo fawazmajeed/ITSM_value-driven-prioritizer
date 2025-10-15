@@ -1,0 +1,7 @@
+"ProblemID","Description","Status","BusinessHoursLost","FinancialImpactUSD","UserFrustrationScore","EstimatedFixEffortHours"
+"PRB001","CRM platform latency during peak sales hours","Open","120","75000","8.5","80"
+"PRB002","VPN connection drops for remote marketing team","Open","45","15000","7.2","40"
+"PRB003","Finance department reports batch processing failure","Open","200","250000","9.1","150"
+"PRB004","Customer-facing portal login page times out intermittently","Open","80","110000","9.5","60"
+"PRB005","Email delivery delays for outbound communications","In Progress","30","5000","6.4","25"
+"PRB006","Intranet knowledge base search returns irrelevant results","Open","15","2000","5.8","35"
