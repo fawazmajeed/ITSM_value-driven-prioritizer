@@ -1,5 +1,5 @@
 import pandas as pd
-from pulp import LpProblem, LpMaximize, lpSum, LpVariable, LpStatus
+from pulp import LpProblem, LpMaximize, lpSum, LpVariable, LpStatus, PULP_CBC_CMD
 
 def winsorized_min_max(series, lower_percentile=0.05, upper_percentile=0.95):
     """
@@ -76,7 +76,9 @@ def run_optimization():
 
     # --- Solve the Model and Print the Results ---
     # Suppress solver messages for cleaner output
-    status = model.solve(LpProblem.PULP_CBC_CMD(msg=0))
+    # --- FIX #2: Call PULP_CBC_CMD directly ---
+    status = model.solve(PULP_CBC_CMD(msg=0))
+    ##status = model.solve(LpProblem.PULP_CBC_CMD(msg=0))
 
     print("--- Value-Driven Prioritization Results (using Winsorized Min-Max) ---")
     print(f"Optimization Status: {LpStatus[status]}\n")
